@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import {Container, Row, Col, Form, Button} from 'react-bootstrap';
 
 
-export const LoginForm = ({handleOnChange, email, pass}) => {
+export const LoginForm = ({handleOnChange, handleOnSubmit, formSwitcher, email, pass}) => {
   return (
     <Container>
         <Row>
             <Col>
             <h1 className='text-light text-center'>Login</h1>
             <hr />
-                <Form>
+                <Form autoComplete='off' onSubmit={handleOnSubmit}>
                     <Form.Group>
                     <Form.Label>Endereço de Email</Form.Label>
                     <Form.Control
@@ -33,23 +33,28 @@ export const LoginForm = ({handleOnChange, email, pass}) => {
                     required
                     />
                     </Form.Group>
+
                     <Button type="submit">Entrar</Button> 
-                </Form>            
+                </Form>  
+                <hr />          
             </Col>
         </Row>
 
         <Row>
             <Col>
-              <a className='text-light' href='#!'>esqueceu sua senha?</a>
+              <a className='text-light' href='#!' onClick={() => formSwitcher("reset")}>
+                esqueceu sua senha?
+              </a>
             </Col>
         </Row>
     </Container>
-  )
-}
+  );
+};
 
 LoginForm.propTypes = {
   handleOnChange: PropTypes.func.isRequired,
+  handleOnSubmit: PropTypes.func.isRequired,
+  formSwitcher: PropTypes.func.isRequired,
   email: PropTypes.string.isRequired,
   pass: PropTypes.string.isRequired,
-
 }
