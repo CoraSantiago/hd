@@ -24,7 +24,7 @@ formSwitcher, email}) => {
                     />
                     </Form.Group>
 
-                    <Button type="submit">Enviar link para login</Button> 
+                    <Button type="submit">Enviar link para login.</Button> 
                 </Form>            
             </Col>
         </Row>
