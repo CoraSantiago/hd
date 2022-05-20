@@ -1,11 +1,11 @@
-import React from "react";
+import React from "react"; 
 import {Header} from './partials/Header.comp'
 import {Footer} from './partials/Footer.comp'
 
 export const DefaultLayaut = ({children}) => {
     return (
         <div className="default-layout">
-            <header className="header">
+            <header className="header mb-2">
                 <Header/>
             </header>
 
